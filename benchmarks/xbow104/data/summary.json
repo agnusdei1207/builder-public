@@ -1,0 +1,266 @@
+{
+  "generated_at": "2026-08-29T13:44:42+00:00",
+  "latest_data_date": "2026-08-29",
+  "tasks_scored": 104,
+  "solved": 67,
+  "fair_denominator": 81,
+  "solve_rate_pct": 82.7,
+  "target_broken_excluded": 0,
+  "browser_pending_excluded": 23,
+  "browser_pending_tasks": [
+    "XBEN-004-24",
+    "XBEN-008-24",
+    "XBEN-010-24",
+    "XBEN-011-24",
+    "XBEN-012-24",
+    "XBEN-013-24",
+    "XBEN-015-24",
+    "XBEN-016-24",
+    "XBEN-017-24",
+    "XBEN-018-24",
+    "XBEN-046-24",
+    "XBEN-047-24",
+    "XBEN-048-24",
+    "XBEN-049-24",
+    "XBEN-050-24",
+    "XBEN-051-24",
+    "XBEN-059-24",
+    "XBEN-062-24",
+    "XBEN-064-24",
+    "XBEN-065-24",
+    "XBEN-070-24",
+    "XBEN-074-24",
+    "XBEN-087-24"
+  ],
+  "tasks_in_progress_rerun": 6,
+  "in_progress_tasks": [
+    "XBEN-004-24",
+    "XBEN-017-24",
+    "XBEN-047-24",
+    "XBEN-048-24",
+    "XBEN-066-24",
+    "XBEN-082-24"
+  ],
+  "tokens": {
+    "total": 255049792,
+    "prompt": 253108403,
+    "completion": 1941389,
+    "cached": 243441443
+  },
+  "cost_usd_total": 0,
+  "fault_class_counts": {
+    "browser_pending": 23,
+    "provider_fault": 2,
+    "solved": 67,
+    "timeout": 1,
+    "unsolved": 11
+  },
+  "target_broken_tasks": [],
+  "per_level": {
+    "1": {
+      "total": 45,
+      "solved": 34,
+      "target_broken": 0,
+      "fair_denominator": 37,
+      "solve_rate_pct": 91.9
+    },
+    "2": {
+      "total": 51,
+      "solved": 30,
+      "target_broken": 0,
+      "fair_denominator": 39,
+      "solve_rate_pct": 76.9
+    },
+    "3": {
+      "total": 8,
+      "solved": 3,
+      "target_broken": 0,
+      "fair_denominator": 5,
+      "solve_rate_pct": 60.0
+    }
+  },
+  "per_tag": {
+    "arbitrary_file_upload": {
+      "total": 6,
+      "solved": 4,
+      "target_broken": 0,
+      "fair_denominator": 6,
+      "solve_rate_pct": 66.7
+    },
+    "blind_sqli": {
+      "total": 3,
+      "solved": 1,
+      "target_broken": 0,
+      "fair_denominator": 3,
+      "solve_rate_pct": 33.3
+    },
+    "brute_force": {
+      "total": 2,
+      "solved": 2,
+      "target_broken": 0,
+      "fair_denominator": 2,
+      "solve_rate_pct": 100.0
+    },
+    "business_logic": {
+      "total": 7,
+      "solved": 7,
+      "target_broken": 0,
+      "fair_denominator": 7,
+      "solve_rate_pct": 100.0
+    },
+    "command_injection": {
+      "total": 11,
+      "solved": 8,
+      "target_broken": 0,
+      "fair_denominator": 11,
+      "solve_rate_pct": 72.7
+    },
+    "crypto": {
+      "total": 3,
+      "solved": 3,
+      "target_broken": 0,
+      "fair_denominator": 3,
+      "solve_rate_pct": 100.0
+    },
+    "cve": {
+      "total": 4,
+      "solved": 3,
+      "target_broken": 0,
+      "fair_denominator": 4,
+      "solve_rate_pct": 75.0
+    },
+    "default_credentials": {
+      "total": 18,
+      "solved": 15,
+      "target_broken": 0,
+      "fair_denominator": 18,
+      "solve_rate_pct": 83.3
+    },
+    "graphql": {
+      "total": 3,
+      "solved": 3,
+      "target_broken": 0,
+      "fair_denominator": 3,
+      "solve_rate_pct": 100.0
+    },
+    "http_method_tamper": {
+      "total": 1,
+      "solved": 1,
+      "target_broken": 0,
+      "fair_denominator": 1,
+      "solve_rate_pct": 100.0
+    },
+    "idor": {
+      "total": 15,
+      "solved": 14,
+      "target_broken": 0,
+      "fair_denominator": 15,
+      "solve_rate_pct": 93.3
+    },
+    "information_disclosure": {
+      "total": 6,
+      "solved": 5,
+      "target_broken": 0,
+      "fair_denominator": 6,
+      "solve_rate_pct": 83.3
+    },
+    "insecure_deserialization": {
+      "total": 6,
+      "solved": 5,
+      "target_broken": 0,
+      "fair_denominator": 6,
+      "solve_rate_pct": 83.3
+    },
+    "jwt": {
+      "total": 3,
+      "solved": 2,
+      "target_broken": 0,
+      "fair_denominator": 3,
+      "solve_rate_pct": 66.7
+    },
+    "lfi": {
+      "total": 6,
+      "solved": 5,
+      "target_broken": 0,
+      "fair_denominator": 6,
+      "solve_rate_pct": 83.3
+    },
+    "nosqli": {
+      "total": 1,
+      "solved": 1,
+      "target_broken": 0,
+      "fair_denominator": 1,
+      "solve_rate_pct": 100.0
+    },
+    "path_traversal": {
+      "total": 5,
+      "solved": 4,
+      "target_broken": 0,
+      "fair_denominator": 5,
+      "solve_rate_pct": 80.0
+    },
+    "privilege_escalation": {
+      "total": 14,
+      "solved": 13,
+      "target_broken": 0,
+      "fair_denominator": 14,
+      "solve_rate_pct": 92.9
+    },
+    "race_condition": {
+      "total": 1,
+      "solved": 0,
+      "target_broken": 0,
+      "fair_denominator": 1,
+      "solve_rate_pct": 0.0
+    },
+    "smuggling_desync": {
+      "total": 1,
+      "solved": 0,
+      "target_broken": 0,
+      "fair_denominator": 1,
+      "solve_rate_pct": 0.0
+    },
+    "sqli": {
+      "total": 6,
+      "solved": 5,
+      "target_broken": 0,
+      "fair_denominator": 6,
+      "solve_rate_pct": 83.3
+    },
+    "ssh": {
+      "total": 1,
+      "solved": 1,
+      "target_broken": 0,
+      "fair_denominator": 1,
+      "solve_rate_pct": 100.0
+    },
+    "ssrf": {
+      "total": 3,
+      "solved": 3,
+      "target_broken": 0,
+      "fair_denominator": 3,
+      "solve_rate_pct": 100.0
+    },
+    "ssti": {
+      "total": 13,
+      "solved": 12,
+      "target_broken": 0,
+      "fair_denominator": 13,
+      "solve_rate_pct": 92.3
+    },
+    "xss": {
+      "total": 23,
+      "solved": 0,
+      "target_broken": 0,
+      "fair_denominator": 0,
+      "solve_rate_pct": 0.0
+    },
+    "xxe": {
+      "total": 3,
+      "solved": 3,
+      "target_broken": 0,
+      "fair_denominator": 3,
+      "solve_rate_pct": 100.0
+    }
+  }
+}

@@ -1,0 +1,26 @@
+# pentesting public facade backed by the shared runtime engine.
+#
+# Usage:
+#   docker compose run pentesting --help
+#   PENTESTING_PROJECT_DIR=/path/to/project docker compose run pentesting
+
+services:
+  pentesting:
+    image: agnusdei1207/pentesting:latest
+    platform: linux/amd64
+    container_name: pentesting
+    stdin_open: true
+    tty: true
+    volumes:
+      - ${PENTESTING_PROJECT_DIR:-.}:/workspace
+      - pentesting-config:/root/.pentesting
+    working_dir: /workspace
+    environment:
+      - OPENAI_API_KEY
+      - OPENAI_BASE_URL
+      - OPENAI_MODEL
+      - OPENAI_MAX_TOKENS
+      - BRAVE_SEARCH_API_KEY
+
+volumes:
+  pentesting-config:

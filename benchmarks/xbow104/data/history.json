@@ -1,0 +1,12 @@
+[
+  {
+    "label": "Run 1",
+    "date": "2026-08-29",
+    "tasks_scored": 104,
+    "solved": 67,
+    "fair_denominator": 81,
+    "solve_rate_pct": 82.7,
+    "tokens_total": 255049792,
+    "cost_usd_total": 0
+  }
+]

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="_qpSp6gk5smSMelgdfXN_lOxkhBn6YTdgWCXtdo_gXA" />
+    <title>3D Architecture Explorer — Pentesting AI Agent</title>
+    <link rel="canonical" href="https://agnusdei1207.github.io/pentesting-public/explorer.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="theme-color" content="#0d1117">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Pentesting is a free, open-source AI penetration-testing agent built in Rust. Autonomous CTF solving, local-first terminal UI, and interactive 3D architecture explorer. Install via npm or Docker in seconds.">
+    <meta name="keywords" content="pentesting, AI pentesting agent, autonomous penetration testing, CTF solver, capture the flag AI, cybersecurity agent, Rust security tool, open-source pentesting, red team automation, vulnerability scanner, offensive security AI, terminal security tool, local-first agent, bug bounty tool, ethical hacking AI, security assessment, 3D architecture explorer, npm pentesting, Docker pentesting, 자동 침투 테스트, AI 보안 에이전트, 사이버보안, 모의해킹, CTF 풀이, 오픈소스 보안 도구, 레드팀 자동화">
+    <meta name="author" content="agnusdei1207">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="generator" content="Rust">
+
+    <!-- Open Graph / Facebook / LinkedIn / Discord / Slack / Kakao -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Pentesting — AI Security Agent">
+    <meta property="og:title" content="Pentesting — Free AI Agent for Autonomous Penetration Testing & CTF">
+    <meta property="og:description" content="Open-source autonomous pentesting agent built in Rust. Local-first terminal UI, CTF auto-solver, red team automation, and interactive 3D architecture explorer. Install in one command via npm or Docker.">
+    <meta property="og:url" content="https://agnusdei1207.github.io/pentesting-public/">
+    <meta property="og:image" content="https://agnusdei1207.github.io/pentesting-public/og-image.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Pentesting: Open-source AI pentesting agent architecture — 3D interactive visualization built in Rust">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ko_KR">
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pentesting — Free AI Agent for Autonomous Penetration Testing & CTF">
+    <meta name="twitter:description" content="Open-source AI pentesting agent built in Rust. Autonomous CTF solver, terminal-native UI, red team automation. Install via npm or Docker.">
+    <meta name="twitter:image" content="https://agnusdei1207.github.io/pentesting-public/og-image.png">
+    <meta name="twitter:image:alt" content="Pentesting: Open-source AI pentesting agent architecture — 3D interactive visualization built in Rust">
+
+    <!-- Structured Data (JSON-LD) for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Pentesting",
+      "alternateName": "Pentesting AI Agent",
+      "url": "https://agnusdei1207.github.io/pentesting-public/",
+      "description": "Open-source autonomous AI penetration-testing agent with interactive 3D architecture explorer. Local-first, terminal-native, built in Rust. Supports CTF auto-solving, red team automation, and security assessment.",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Linux, macOS, Windows via Docker",
+      "softwareVersion": "latest",
+      "programmingLanguage": "Rust",
+      "license": "https://opensource.org/licenses/MIT",
+      "image": "https://agnusdei1207.github.io/pentesting-public/og-image.png",
+      "screenshot": "https://agnusdei1207.github.io/pentesting-public/og-image.png",
+      "keywords": "AI pentesting, autonomous penetration testing, CTF solver, cybersecurity agent, Rust security, red team automation, open-source security",
+      "installUrl": "https://www.npmjs.com/package/pentesting",
+      "downloadUrl": "https://hub.docker.com/r/agnusdei1207/pentesting",
+      "author": {
+        "@type": "Person",
+        "name": "agnusdei1207",
+        "url": "https://github.com/agnusdei1207"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "sourceOrganization": {
+        "@type": "SoftwareSourceCode",
+        "codeRepository": "https://github.com/agnusdei1207/pentesting",
+        "programmingLanguage": "Rust",
+        "runtimePlatform": "Native binary"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="css/scene.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .home-link {
+            position: fixed; top: 1.4rem; left: 1.5rem; z-index: 120;
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            padding: 0.5rem 0.8rem; border-radius: 10px;
+            background: rgba(10, 15, 26, 0.72); border: 1px solid rgba(120, 150, 200, 0.22);
+            color: #9fb0c8; text-decoration: none; font: 600 0.82rem/1 'JetBrains Mono', ui-monospace, monospace;
+            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+            transition: color .2s ease, border-color .2s ease, background .2s ease;
+        }
+        .home-link:hover { color: #eef3fb; border-color: rgba(120, 150, 200, 0.45); background: rgba(10, 15, 26, 0.9); }
+        .home-link svg { width: 15px; height: 15px; }
+        .nav-links { position: fixed; top: 1.4rem; left: 1.5rem; z-index: 120; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .nav-links .home-link { position: static; top: auto; left: auto; }
+        @media (max-width: 600px) { .home-link span { display: none; } .home-link { padding: 0.5rem; } }
+    </style>
+</head>
+<body>
+    <div class="webgl-fallback" id="webgl-fallback" hidden>WebGL is required to run the architecture explorer.</div>
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Top-left navigation: back to landing page + benchmark/research report -->
+    <nav class="nav-links" aria-label="Site navigation">
+        <a class="home-link" href="index.html" aria-label="Back to home" title="Back to home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            <span>Home</span>
+        </a>
+        <a class="home-link" href="index.html" aria-label="Benchmark / research report" title="Benchmark / research report">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+            <span>Benchmark</span>
+        </a>
+    </nav>
+
+    <!-- Guided-tour scroll progress -->
+    <div class="progress-rail"><div class="progress-fill" id="progress-bar"></div></div>
+
+    <!-- Top-right: view-mode toggle (guided ⇄ free) + reset -->
+    <div class="top-right">
+        <a class="icon-btn github-btn" href="https://github.com/agnusdei1207/pentesting-public" target="_blank" rel="noopener noreferrer" title="GitHub Repository: agnusdei1207/pentesting-public" aria-label="GitHub Repository: agnusdei1207/pentesting-public">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+        <a class="icon-btn npm-btn" href="https://npmx.dev/package/pentesting" target="_blank" rel="noopener noreferrer" title="Install from npm" aria-label="Install from npm">
+            <svg viewBox="0 0 27.23 27.23" aria-hidden="true"><rect width="27.23" height="27.23" rx="2" fill="#ff7b72"/><path fill="#fff" d="M5.8 21.75V5.8h15.63v15.95h-3.9V9.7h-3.92v12.05z"/></svg>
+        </a>
+        <select class="lang-select" id="lang-select" aria-label="Language" title="Language"></select>
+        <div class="mode-toggle" id="mode-toggle" role="group" aria-label="View mode">
+            <button class="mt-btn" data-mode="guided" title="Guided tour" aria-label="Guided tour">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <button class="mt-btn" data-mode="free" title="Free explore" aria-label="Free explore">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M3 12h18M12 3l-3 3M12 3l3 3M12 21l-3-3M12 21l3-3M3 12l3-3M3 12l3 3M21 12l-3-3M21 12l-3 3"/></svg>
+            </button>
+        </div>
+        <button class="icon-btn" id="reset-btn" title="Reset view" aria-label="Reset view">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="2.5" fill="currentColor" stroke="none"/></svg>
+        </button>
+    </div>
+
+    <!-- Center caption for overview/intro stops -->
+    <section class="caption" id="caption" aria-live="polite">
+        <h2 id="cap-title">Agent Architecture</h2>
+        <p id="cap-sub">Scroll to explore</p>
+    </section>
+
+    <!-- Bottom-left: layer legend (click to isolate a layer) -->
+    <nav class="legend" id="legend" aria-label="Layer legend"></nav>
+
+    <!-- Floating, borderless node description (no panel, no box) -->
+    <div class="node-info" id="node-info" aria-live="polite">
+        <div class="ni-layer" id="ins-layer"></div>
+        <h2 class="ni-title" id="ins-title"></h2>
+        <div class="ni-crate" id="ins-crate"></div>
+        <p class="ni-logic" id="ins-logic"></p>
+        <div class="ni-trace" id="ins-data"></div>
+    </div>
+
+    <!-- Scroll spacer: gives the guided tour room to scroll (height set in JS) -->
+    <div class="tour-spacer" id="tour-spacer" aria-hidden="true"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="js/i18n.js?v=3"></script>
+    <script src="js/scene.js?v=2"></script>
+</body>
+</html>

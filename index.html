@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="_qpSp6gk5smSMelgdfXN_lOxkhBn6YTdgWCXtdo_gXA" />
+    <title>Pentesting — Autonomous AI Pentesting Agent | Rust CTF Solver & 3D Architecture</title>
+    <link rel="canonical" href="https://agnusdei1207.github.io/pentesting-public/">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#15171b" media="(prefers-color-scheme: dark)">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Pentesting is an autonomous AI penetration-testing agent built in Rust. This report documents its results on the XBOW-104 autonomous web-exploitation benchmark, run at $0 cost on a free-tier model, with a full methodology and reproducibility breakdown.">
+    <meta name="keywords" content="pentesting, AI pentesting agent, autonomous penetration testing, CTF solver, capture the flag AI, cybersecurity agent, Rust security tool, red team automation, vulnerability scanner, offensive security AI, terminal security tool, local-first agent, bug bounty tool, ethical hacking AI, security assessment, 3D architecture explorer, npm pentesting, Docker pentesting, 자동 침투 테스트, AI 보안 에이전트, 사이버보안, 모의해킹, CTF 풀이, 레드팀 자동화">
+    <meta name="author" content="agnusdei1207">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="generator" content="Rust">
+
+    <!-- Open Graph / Facebook / LinkedIn / Discord / Slack / Kakao -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Pentesting — AI Security Agent">
+    <meta property="og:title" content="Pentesting — AI Agent for Autonomous Penetration Testing: XBOW-104 Report">
+    <meta property="og:description" content="Autonomous pentesting agent built in Rust. Report of its XBOW-104 web-exploitation benchmark results — 67/81 fair attempts solved, 82.7% solve-rate, $0 cost on a free-tier model — with methodology and reproducibility notes.">
+    <meta property="og:url" content="https://agnusdei1207.github.io/pentesting-public/">
+    <meta property="og:image" content="https://agnusdei1207.github.io/pentesting-public/og-image.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Pentesting: Autonomous AI pentesting agent architecture — 3D interactive visualization built in Rust">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ko_KR">
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pentesting — AI Agent for Autonomous Penetration Testing: XBOW-104 Report">
+    <meta name="twitter:description" content="Autonomous AI pentesting agent built in Rust. XBOW-104 web-exploitation benchmark: 67/81 fair attempts solved, 82.7% solve-rate, $0 cost. Methodology and reproducibility included.">
+    <meta name="twitter:image" content="https://agnusdei1207.github.io/pentesting-public/og-image.png">
+    <meta name="twitter:image:alt" content="Pentesting: Autonomous AI pentesting agent architecture — 3D interactive visualization built in Rust">
+
+    <!-- Structured Data (JSON-LD) for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Pentesting",
+      "alternateName": "Pentesting AI Agent",
+      "url": "https://agnusdei1207.github.io/pentesting-public/",
+      "description": "Autonomous AI penetration-testing agent with interactive 3D architecture explorer. Local-first, terminal-native, built in Rust. Supports CTF auto-solving, red team automation, and security assessment.",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Linux, macOS, Windows via Docker",
+      "softwareVersion": "latest",
+      "programmingLanguage": "Rust",
+      "image": "https://agnusdei1207.github.io/pentesting-public/og-image.png",
+      "screenshot": "https://agnusdei1207.github.io/pentesting-public/og-image.png",
+      "keywords": "AI pentesting, autonomous penetration testing, CTF solver, cybersecurity agent, Rust security, red team automation",
+      "installUrl": "https://www.npmjs.com/package/pentesting",
+      "downloadUrl": "https://hub.docker.com/r/agnusdei1207/pentesting",
+      "author": {
+        "@type": "Person",
+        "name": "agnusdei1207",
+        "url": "https://github.com/agnusdei1207"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "sourceOrganization": {
+        "@type": "SoftwareSourceCode",
+        "codeRepository": "https://github.com/agnusdei1207/pentesting",
+        "programmingLanguage": "Rust",
+        "runtimePlatform": "Native binary"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+
+    <!-- ══ TOP NAV ══ -->
+    <nav class="topnav" aria-label="Primary">
+        <div class="row">
+            <a class="wordmark" href="./">pentesting</a>
+            <div class="navlinks">
+                <a href="explorer.html" target="_blank" rel="noopener">3D Explorer</a>
+                <a href="https://github.com/agnusdei1207/pentesting-public" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="paper">
+
+        <!-- ══ TITLE BLOCK ══ -->
+        <header class="doc-head">
+            <h1 class="title">Pentesting: An Autonomous Agent for Web Penetration Testing</h1>
+            <p class="subtitle">Results on the XBOW-104 web-exploitation benchmark.</p>
+            <p class="byline">
+                agnusdei1207 &nbsp;·&nbsp; local-first, distributed as a native binary<br>
+                Report generated <span id="meta-date">2026-08-29</span> &nbsp;·&nbsp;
+                <a href="https://github.com/agnusdei1207/pentesting-public" target="_blank" rel="noopener noreferrer">source repository</a>
+            </p>
+        </header>
+
+        <!-- ══ ABSTRACT ══ -->
+        <section class="sec" id="overview">
+            <h2>Abstract</h2>
+            <p class="abstract">
+                Pentesting is an autonomous penetration-testing agent that runs locally in your
+                terminal — planning multi-step attacks, driving real toolchains, and closing a task
+                only on verifiable evidence such as a captured flag. This page reports its measured
+                performance on XBOW-104, a suite of 104 real web-exploitation challenges.
+            </p>
+        </section>
+
+        <!-- ══ RESULTS ══ -->
+        <section class="sec" id="benchmark">
+            <h2>Results</h2>
+
+            <p class="statline">
+                <b id="st-solved">67/81</b> solved (fair attempts)<span class="div">·</span>
+                <b id="st-rate">82.7%</b> solve-rate<span class="div">·</span>
+                <b id="st-cost">$0</b> total cost<span class="div">·</span>
+                <b id="st-scored">104</b> tasks scored<span class="div">·</span>
+                <b id="st-broken">10</b> target-broken (excluded)
+            </p>
+
+            <p>
+                Across the fair denominator — tasks whose target built and started, giving the agent
+                a real attempt — the agent solved 67 of 81. Performance falls with difficulty, as
+                shown below and in Figure 2.
+            </p>
+
+            <div class="table-wrap">
+                <table class="data" id="level-table">
+                    <caption>Table 1. Solve-rate by difficulty level.</caption>
+                    <thead>
+                        <tr><th>Level</th><th>Solved</th><th>Fair attempts</th><th>Solve-rate</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>L1</td><td>30</td><td>40</td><td>75.0%</td></tr>
+                        <tr><td>L2</td><td>23</td><td>47</td><td>48.9%</td></tr>
+                        <tr><td>L3</td><td>2</td><td>7</td><td>28.6%</td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td>Total</td><td><b>67</b></td><td><b>81</b></td><td><b>82.7%</b></td></tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <figure class="fig">
+                <img src="benchmarks/xbow104/graphs/outcome_mix.svg" alt="Outcome mix across all scored tasks: solved, unsolved, timeout, provider fault, target broken" loading="lazy" width="620">
+                <figcaption><b>Figure 1.</b> Outcome mix across all 104 scored tasks.</figcaption>
+            </figure>
+
+            <figure class="fig">
+                <img src="benchmarks/xbow104/graphs/solve_rate_by_level.svg" alt="Solve rate by difficulty level L1 through L3" loading="lazy" width="620">
+                <figcaption><b>Figure 2.</b> Solve-rate by difficulty level.</figcaption>
+            </figure>
+
+            <figure class="fig wide">
+                <img src="benchmarks/xbow104/graphs/solve_rate_by_tag.svg" alt="Solve rate broken down by vulnerability class" loading="lazy">
+                <figcaption><b>Figure 3.</b> Solve-rate by vulnerability class.</figcaption>
+            </figure>
+
+            <figure class="fig">
+                <img src="benchmarks/xbow104/graphs/token_usage.svg" alt="Per-task token usage distribution" loading="lazy" width="620">
+                <figcaption><b>Figure 4.</b> Per-task token usage.</figcaption>
+            </figure>
+
+            <figure class="fig">
+                <img src="benchmarks/xbow104/graphs/history.svg" alt="Solved count over successive benchmark runs" loading="lazy" width="620">
+                <figcaption><b>Figure 5.</b> Solved count over successive runs.</figcaption>
+            </figure>
+        </section>
+
+        <!-- ══ METHODOLOGY ══ -->
+        <section class="sec" id="methodology">
+            <h2>Methodology</h2>
+            <p>
+                XBOW-104 is treated as a data-driven measurement, not a leaderboard score. Each of
+                the 104 challenges is a self-contained web target with a hidden flag. The agent
+                receives only the target endpoint and must reach the flag through its own planning
+                and tool use; a task counts as solved only when the flag is captured and verified,
+                so partial or claimed progress does not count. The reported number is the newest
+                completed run per task, which keeps the measurement current as targets are re-run.
+                The full task-level breakdown, per-tag tables, and generation details are documented
+                in the
+                <a href="benchmarks/xbow104/README.md">benchmark README</a>.
+            </p>
+            <p>
+                <b>Model-limitation evidence (companion experiment).</b> The ceiling here is the
+                model, not the runtime. In a separate controlled experiment on the same
+                <code>minimax/minimax-m3:free</code> backbone, even when a decisive, unambiguous clue
+                was surfaced and injected directly into the model's context, the model failed to act
+                on that clue <b>&#8776;42% of the time</b> &mdash; ignoring a solution it had already
+                been handed. That is a clear model-level ceiling, independent of orchestration or
+                tooling: a stronger backbone would lift those cases with no system change, and it
+                frames the XBOW-104 non-solves as reasoning limits rather than runtime faults.
+            </p>
+            <figure style="margin:1.1rem 0;max-width:520px;">
+                <div style="display:flex;height:28px;border-radius:5px;overflow:hidden;font:600 12px/28px system-ui,sans-serif;color:#fff;">
+                    <div style="width:42%;background:#c0392b;text-align:center;white-space:nowrap;">ignored 42%</div>
+                    <div style="width:58%;background:#2e7d54;text-align:center;white-space:nowrap;">acted on 58%</div>
+                </div>
+                <figcaption style="font-size:12px;color:#777;margin-top:5px;">
+                    Companion experiment: whether the model used a decisive clue already present in its
+                    context. Left (red) = clue ignored despite being handed to the model &mdash; a
+                    model-level failure, not a system fault.
+                </figcaption>
+            </figure>
+        </section>
+
+        <!-- ══ REPRODUCIBILITY / NOTES ══ -->
+        <section class="sec" id="reproducibility">
+            <h2>Reproducibility and notes</h2>
+            <ul class="notes">
+                <li>Model: <b>minimax/minimax-m3:free</b> (MiniMax-M3, 1M context, OpenRouter free tier). No paid model was used.</li>
+                <li>Total cost: <b>$0</b>. Token accounting is published in the underlying result data.</li>
+                <li><b>Target-broken</b> tasks — challenges whose target failed to build or start — are excluded from the denominator, since the agent never received a fair attempt. They remain visible in the outcome mix (Figure 1) for transparency.</li>
+                <li>Only clean result metrics are published. No transcripts, prompts, or flag values are included.</li>
+                <li>Full breakdown, tables, and figures: <a href="benchmarks/xbow104/README.md">benchmarks/xbow104/README.md</a>.</li>
+                <li>Architecture: the agent's six-layer design can be inspected in the interactive <a href="explorer.html" target="_blank" rel="noopener">3D Explorer</a>.</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- ══ FOOTER ══ -->
+    <footer class="paper-foot">
+        <div class="frow">
+            <a href="https://github.com/agnusdei1207/pentesting-public" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.npmjs.com/package/pentesting" target="_blank" rel="noopener noreferrer">npm</a>
+            <a href="https://hub.docker.com/r/agnusdei1207/pentesting" target="_blank" rel="noopener noreferrer">Docker</a>
+            <a href="explorer.html" target="_blank" rel="noopener">3D Explorer</a>
+        </div>
+        <div>Closed-core agent, distributed as a native binary; the public mirror and installers are MIT-licensed. Built in Rust, local-first, evidence-backed.</div>
+    </footer>
+
+    <script>
+    (function () {
+        "use strict";
+
+        function pct(n) { return (typeof n === "number") ? n.toFixed(1).replace(/\.0$/, ".0") + "%" : ""; }
+        function fmtInt(n) { return Number(n).toLocaleString("en-US"); }
+
+        /* ── Live benchmark numbers from published summary.json (static fallback in DOM) ── */
+        fetch("benchmarks/xbow104/data/summary.json", { cache: "no-store" })
+            .then(function (r) { if (!r.ok) throw new Error("no data"); return r.json(); })
+            .then(function (d) {
+                if (typeof d.solved === "number" && typeof d.fair_denominator === "number") {
+                    document.getElementById("st-solved").textContent = d.solved + "/" + d.fair_denominator;
+                }
+                if (typeof d.solve_rate_pct === "number") {
+                    document.getElementById("st-rate").textContent = d.solve_rate_pct + "%";
+                }
+                if (typeof d.cost_usd_total === "number") {
+                    var c = d.cost_usd_total;
+                    document.getElementById("st-cost").textContent = c === 0 ? "$0" : "$" + c;
+                }
+                if (typeof d.tasks_scored === "number") {
+                    document.getElementById("st-scored").textContent = fmtInt(d.tasks_scored);
+                }
+                if (typeof d.target_broken_excluded === "number") {
+                    document.getElementById("st-broken").textContent = d.target_broken_excluded;
+                }
+                if (d.latest_data_date) {
+                    document.getElementById("meta-date").textContent = d.latest_data_date;
+                }
+
+                /* Rebuild the by-level table from live data */
+                if (d.per_level) {
+                    var order = ["1", "2", "3"];
+                    var rows = "";
+                    order.forEach(function (k) {
+                        var lv = d.per_level[k];
+                        if (!lv) return;
+                        rows += "<tr><td>L" + k + "</td><td>" + lv.solved + "</td><td>" +
+                                lv.fair_denominator + "</td><td>" + pct(lv.solve_rate_pct) + "</td></tr>";
+                    });
+                    if (rows) {
+                        var tbody = document.querySelector("#level-table tbody");
+                        if (tbody) tbody.innerHTML = rows;
+                    }
+                    if (typeof d.solved === "number") {
+                        var tf = document.querySelector("#level-table tfoot tr");
+                        if (tf) {
+                            tf.innerHTML = "<td>Total</td><td><b>" + d.solved + "</b></td><td><b>" +
+                                d.fair_denominator + "</b></td><td><b>" + d.solve_rate_pct + "%</b></td>";
+                        }
+                    }
+                }
+            })
+            .catch(function () { /* keep static fallback values already in the DOM */ });
+    })();
+    </script>
+</body>
+</html>
