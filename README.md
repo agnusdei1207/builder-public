@@ -48,8 +48,8 @@ docker run -it --rm \
 
 ```bash
 /model                                   # pick a provider / model (or preset OPENAI_* env)
-/goal 10.10.11.20:8080 get root flag     # set the mission — the autonomous loop starts automatically
-                                         # (recon -> exploit -> verify; Esc or /auto stops it)
+/goal 10.10.11.20:8080 get root flag     # record the mission
+/auto                                    # explicitly start or stop autonomous continuation
 ```
 
 # Benchmark — XBOW-104
@@ -73,36 +73,35 @@ the system, not the model, is the limiting factor.
 On XBOW-104, run on a **free-tier `minimax/minimax-m3:free` backbone at $0 total cost** (MiniMax-M3, 1M context, via OpenRouter):
 
 - **Solve rate: 67 / 81 fair attempts (82.7%).**
-- 104 tasks scored; **23 excluded** as *browser-pending* — they require a working
-  headless browser (the target ships a PhantomJS XSS-checker bot), a capability
-  the agent does not have yet, so they get no fair attempt and are re-tested once
-  that tooling lands. The rate is over the tasks the agent can currently attempt.
+- 104 tasks scored; **23 excluded** as *browser-pending* because browser tooling
+  was unavailable during this run. They received no fair attempt and remain
+  pending remeasurement with the current browser-verification capability.
 - A flag counts as solved **only when it is captured from the live target** —
   flags recoverable from harness state are rejected.
 
-![Outcome mix across 104 tasks](benchmarks/xbow104/graphs/outcome_mix.png)
+![Outcome mix across 104 tasks](https://raw.githubusercontent.com/agnusdei1207/pentesting-public/main/benchmarks/xbow104/graphs/outcome_mix.png)
 
 *Figure 1. Outcome mix across the 104 tasks.*
 
-![Solve rate by difficulty level](benchmarks/xbow104/graphs/solve_rate_by_level.png)
+![Solve rate by difficulty level](https://raw.githubusercontent.com/agnusdei1207/pentesting-public/main/benchmarks/xbow104/graphs/solve_rate_by_level.png)
 
 *Figure 2. Solve rate by difficulty level.*
 
-![Solve rate by vulnerability class](benchmarks/xbow104/graphs/solve_rate_by_tag.png)
+![Solve rate by vulnerability class](https://raw.githubusercontent.com/agnusdei1207/pentesting-public/main/benchmarks/xbow104/graphs/solve_rate_by_tag.png)
 
 *Figure 3. Solve rate by vulnerability class (tag).*
 
-![Token usage per task](benchmarks/xbow104/graphs/token_usage.png)
+![Token usage per task](https://raw.githubusercontent.com/agnusdei1207/pentesting-public/main/benchmarks/xbow104/graphs/token_usage.png)
 
 *Figure 4. Token usage per task — a few looping runs dominate the cost.*
 
-![Solve count across runs](benchmarks/xbow104/graphs/history.png)
+![Solve count across runs](https://raw.githubusercontent.com/agnusdei1207/pentesting-public/main/benchmarks/xbow104/graphs/history.png)
 
 *Figure 5. Solve count by benchmark run. This is Run 1 — the first pass over the suite; the series extends only as the suite is re-measured after adopting improvements (keyed by run, not by date).*
 
 Full breakdown, per-vulnerability-class rates, and token usage are in the
 [live report](https://agnusdei1207.github.io/pentesting-public/) and the
-[benchmark data](benchmarks/xbow104/README.md). *(Figures regenerate from the
+[benchmark data](https://github.com/agnusdei1207/pentesting-public/blob/main/benchmarks/xbow104/README.md). *(Figures regenerate from the
 raw run evidence; numbers reflect the latest published run.)*
 
 ## Methodology

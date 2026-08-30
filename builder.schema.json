@@ -334,7 +334,7 @@
       ]
     },
     "theme": {
-      "description": "Theme primary color preset (\"coral\", \"cyan\", \"green\", \"purple\", \"amber\", \"white\").",
+      "description": "Theme primary color preset (default: \"cyan\"; also \"coral\", \"green\", \"purple\", \"amber\", \"white\").",
       "type": [
         "string",
         "null"
@@ -766,7 +766,7 @@
       ]
     },
     "ProviderAuthMethod": {
-      "description": "Authentication method supported by a provider.\n\nOnly the simple (non-OAuth) methods are available here; providers that\nrequire OAuth device or authorization-code flows must be configured via the\nfile-based `provider.json` override instead.",
+      "description": "Authentication method supported by a provider.\n\nRuntime authentication methods supported by provider configuration.",
       "type": "string",
       "enum": [
         "api_key",
@@ -858,7 +858,6 @@
         "OpenAI",
         "OpenAIResponses",
         "Anthropic",
-        "Bedrock",
         "Google",
         "OpenCode"
       ]
@@ -903,7 +902,7 @@
       "type": "object",
       "properties": {
         "effort": {
-          "description": "Controls the effort level of the model's reasoning.\n`none` disables reasoning; any other value requests reasoning even when\n`enabled` is omitted.\nForwarded on Anthropic-compatible paths (including MiniMax), OpenRouter /\nBuilder, and providers that expose `reasoning_effort` such as Requesty\nand GitHub Copilot.",
+          "description": "Controls the effort level of the model's reasoning.\n`none` disables reasoning; any other value requests reasoning even when\n`enabled` is omitted.\nForwarded on Anthropic-compatible paths (including MiniMax), OpenRouter /\nBuilder, and providers that expose `reasoning_effort` such as Requesty.",
           "anyOf": [
             {
               "$ref": "#/$defs/Effort"
